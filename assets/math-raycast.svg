@@ -1,0 +1,44 @@
+<svg width="490" height="300" viewBox="0 0 490 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c0c0c"/><stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="490" height="300" rx="10" fill="url(#bg)"/>
+  <rect x="1" y="1" width="488" height="298" rx="9" fill="none" stroke="#2a2a2a" stroke-width="1.5"/>
+  <text x="18" y="30" font-family="'Courier New',monospace" font-size="15" font-weight="bold" fill="#ffffff" letter-spacing="2">field of view</text>
+  <text x="18" y="48" font-family="'Courier New',monospace" font-size="11" fill="#555555" letter-spacing="1">raycast vision cone · enemy AI line-of-sight</text>
+  <clipPath id="frame"><rect x="2" y="2" width="486" height="296" rx="9"/></clipPath>
+  <g clip-path="url(#frame)">
+  <rect x="255" y="196" width="52" height="52" fill="none" stroke="#555555" stroke-width="1.5"/>
+  <rect x="205" y="70" width="40" height="40" fill="none" stroke="#555555" stroke-width="1.5"/>
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="-34.0 92 172;34.0 92 172;-34.0 92 172" dur="8.0s" repeatCount="indefinite"/>
+    <path d="M 92 172 L 356.9 31.2 A 300 300 0 0 1 356.9 312.8 Z" fill="#ffffff" opacity="0.07"/>
+    <path d="M 92 172 L 356.9 31.2 A 300 300 0 0 1 356.9 312.8 Z" fill="none" stroke="#9a9a9a" stroke-width="1.3" opacity="0.7"/>
+    <line x1="92" y1="172" x2="356.9" y2="31.2" stroke="#555555" stroke-width="0.8" opacity="0.6"/>
+    <line x1="92" y1="172" x2="383.1" y2="99.4" stroke="#555555" stroke-width="0.8" opacity="0.6"/>
+    <line x1="92" y1="172" x2="392.0" y2="172.0" stroke="#555555" stroke-width="0.8" opacity="0.6"/>
+    <line x1="92" y1="172" x2="383.1" y2="244.6" stroke="#555555" stroke-width="0.8" opacity="0.6"/>
+    <line x1="92" y1="172" x2="356.9" y2="312.8" stroke="#555555" stroke-width="0.8" opacity="0.6"/>
+  </g>
+  <circle cx="92" cy="172" r="10" fill="none" stroke="#ffffff" stroke-width="2" filter="url(#glow)"/>
+  <circle cx="92" cy="172" r="3.5" fill="#ffffff"/>
+  <text x="82" y="204" font-family="'Courier New',monospace" font-size="11" fill="#555555">AI</text>
+  <line x1="92" y1="172" x2="388" y2="108" stroke="#ffffff" stroke-width="1.8" filter="url(#glow)" opacity="0">
+    <animate attributeName="opacity" values="1;1;0;0;1;1" keyTimes="0;0.3662;0.3862;0.6138;0.6338;1" dur="8.0s" repeatCount="indefinite"/>
+  </line>
+  <circle cx="388" cy="108" r="7" fill="#9a9a9a"/>
+  <circle cx="388" cy="108" r="13" fill="none" stroke="#ffffff" stroke-width="1.6" opacity="0">
+    <animate attributeName="opacity" values="1;1;0;0;1;1" keyTimes="0;0.3662;0.3862;0.6138;0.6338;1" dur="8.0s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="11;16;11" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <text x="388" y="84" text-anchor="middle" font-family="'Courier New',monospace" font-size="12" font-weight="bold" fill="#ffffff" letter-spacing="2" opacity="0">DETECTED
+    <animate attributeName="opacity" values="1;1;0;0;1;1" keyTimes="0;0.3662;0.3862;0.6138;0.6338;1" dur="8.0s" repeatCount="indefinite"/>
+  </text>
+  </g>
+  <text x="24" y="282" font-family="'Courier New',monospace" font-size="11" fill="#555555">if angle(a,b) ≤ fov/2 → raycast(target)</text>
+</svg>
