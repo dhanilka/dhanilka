@@ -1,0 +1,157 @@
+<svg width="1000" height="300" viewBox="0 0 1000 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Animated aurora gradient -->
+    <linearGradient id="aurora" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff">
+        <animate attributeName="stop-color" values="#00f0ff;#a855f7;#ff2d78;#00f0ff" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#a855f7">
+        <animate attributeName="stop-color" values="#a855f7;#ff2d78;#00f0ff;#a855f7" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#ff2d78">
+        <animate attributeName="stop-color" values="#ff2d78;#00f0ff;#a855f7;#ff2d78" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a14"/>
+      <stop offset="100%" stop-color="#10101e"/>
+    </linearGradient>
+
+    <linearGradient id="fadeGrid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1e3a" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#4040aa" stop-opacity="0.55"/>
+    </linearGradient>
+
+    <radialGradient id="glowCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="neon" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softNeon" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="300" rx="14" fill="url(#bgGrad)"/>
+
+  <!-- Ambient glow -->
+  <ellipse cx="500" cy="160" rx="420" ry="150" fill="url(#glowCore)">
+    <animate attributeName="rx" values="420;480;420" dur="6s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Perspective floor grid (VR space) -->
+  <g stroke="url(#fadeGrid)" stroke-width="1" opacity="0.8">
+    <line x1="500" y1="190" x2="-150" y2="300"/>
+    <line x1="500" y1="190" x2="60" y2="300"/>
+    <line x1="500" y1="190" x2="230" y2="300"/>
+    <line x1="500" y1="190" x2="380" y2="300"/>
+    <line x1="500" y1="190" x2="500" y2="300"/>
+    <line x1="500" y1="190" x2="620" y2="300"/>
+    <line x1="500" y1="190" x2="770" y2="300"/>
+    <line x1="500" y1="190" x2="940" y2="300"/>
+    <line x1="500" y1="190" x2="1150" y2="300"/>
+  </g>
+  <!-- Grid horizontals scrolling toward viewer -->
+  <g stroke="#5050c8" stroke-width="1">
+    <line x1="0" y1="0" x2="1000" y2="0" opacity="0.5">
+      <animate attributeName="y1" values="196;300" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="196;300" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="0" x2="1000" y2="0" opacity="0.5">
+      <animate attributeName="y1" values="196;300" dur="3s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="196;300" dur="3s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="0" y1="0" x2="1000" y2="0" opacity="0.5">
+      <animate attributeName="y1" values="196;300" dur="3s" begin="2s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="196;300" dur="3s" begin="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin="2s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Floating particles -->
+  <g fill="#00f0ff">
+    <circle cx="120" cy="80" r="2" opacity="0.7">
+      <animate attributeName="cy" values="80;60;80" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="870" cy="70" r="2.5" opacity="0.6" fill="#ff2d78">
+      <animate attributeName="cy" values="70;95;70" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.15;0.6" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="220" cy="200" r="1.6" opacity="0.5" fill="#a855f7">
+      <animate attributeName="cy" values="200;175;200" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="790" cy="190" r="1.8" opacity="0.5">
+      <animate attributeName="cy" values="190;215;190" dur="6.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="60" cy="150" r="1.4" opacity="0.4" fill="#a855f7">
+      <animate attributeName="cx" values="60;80;60" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="940" cy="140" r="1.4" opacity="0.4">
+      <animate attributeName="cx" values="940;915;940" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Left bracket: VR headset wireframe -->
+  <g transform="translate(150,105)" stroke="url(#aurora)" stroke-width="2.4" fill="none" filter="url(#softNeon)">
+    <rect x="0" y="10" width="86" height="46" rx="16"/>
+    <path d="M 14 56 Q 20 70 34 66 L 52 66 Q 66 70 72 56"/>
+    <circle cx="26" cy="33" r="9" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="60" cy="33" r="9" opacity="0.9">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <animateTransform attributeName="transform" type="translate" values="150,105;150,98;150,105" dur="4s" repeatCount="indefinite" additive="replace"/>
+  </g>
+
+  <!-- Right bracket: code glyph -->
+  <g transform="translate(770,108)" filter="url(#softNeon)">
+    <text x="0" y="34" font-family="'Courier New',monospace" font-size="44" font-weight="bold" fill="url(#aurora)">&lt;/&gt;</text>
+    <animateTransform attributeName="transform" type="translate" values="770,108;770,115;770,108" dur="4s" repeatCount="indefinite" additive="replace"/>
+  </g>
+
+  <!-- Name -->
+  <text x="500" y="140" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="58" font-weight="800" letter-spacing="6" fill="url(#aurora)" filter="url(#neon)">
+    DHANILKA
+    <animate attributeName="opacity" values="0;1" dur="1.2s" fill="freeze"/>
+  </text>
+
+  <!-- Subtitle with blinking cursor -->
+  <g font-family="'Courier New',monospace" font-size="17" fill="#8be9fd">
+    <text x="500" y="175" text-anchor="middle" letter-spacing="2" opacity="0">
+      XR ENGINEER · FULL-STACK DEVELOPER · BUILDER OF WORLDS
+      <animate attributeName="opacity" values="0;0;1" dur="2s" fill="freeze"/>
+    </text>
+    <text x="758" y="175" font-size="17" fill="#00f0ff" opacity="0">
+      _
+      <animate attributeName="opacity" values="0;1;0" dur="1s" begin="2s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- Scan line sweep -->
+  <rect x="0" y="0" width="1000" height="3" fill="#00f0ff" opacity="0.25" rx="2">
+    <animate attributeName="y" values="0;297;0" dur="9s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Border pulse -->
+  <rect x="1.5" y="1.5" width="997" height="297" rx="13" fill="none" stroke="url(#aurora)" stroke-width="2" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.25;0.6" dur="4s" repeatCount="indefinite"/>
+  </rect>
+</svg>
